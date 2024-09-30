@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+const memberRoutes = require('./routes/memberRoutes'); // Ruta de miembros
 
 // Middleware para parsear JSON
 app.use(express.json());
@@ -10,10 +11,11 @@ mongoose.connect('mongodb+srv://acvidela:tinchotecla@clustera.hys4b.mongodb.net/
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.error('Error connecting to MongoDB:', err));
 
-// Rutas (aquí más tarde agregarás tus rutas)
+// Rutas 
 app.get('/', (req, res) => {
   res.send('API is running...');
 });
+app.use('/api/members', memberRoutes);
 
 // Escuchar en un puerto
 const PORT = process.env.PORT || 3000;
