@@ -9,6 +9,12 @@ const memberSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  peso: {
+    type: Number
+  },
+  altura: {
+    type: Number
+  },
   fecha_nacimiento: {
     type: Date,  
     required: true,
