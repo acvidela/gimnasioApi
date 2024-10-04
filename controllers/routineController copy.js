@@ -1,4 +1,4 @@
-const Member = require('../models/routinModel.js');
+const Member = require('../models/routineModel.js');
 
 // Crear una nueva rutina
 exports.createRoutine = async (req, res) => {
