@@ -1,7 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const app = express();
 const memberRoutes = require('./routes/memberRoutes'); // Ruta de miembros
+
+// Habilitar CORS para todas las rutas
+app.use(cors());
 
 // Middleware para parsear JSON
 app.use(express.json());
