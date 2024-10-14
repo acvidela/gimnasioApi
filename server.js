@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 const memberRoutes = require('./routes/memberRoutes'); // Ruta de miembros
+const routineRoutes = require('./routes/routineRoutes'); // Ruta de rutinas
+const classRoutes = require('./routes/classRoutes'); // Ruta de clases
 
 // Habilitar CORS para todas las rutas
 app.use(cors());
@@ -20,6 +22,9 @@ app.get('/', (req, res) => {
   res.send('API is running...');
 });
 app.use('/api/members', memberRoutes);
+app.use('/api/routines', routineRoutes);
+app.use('/api/classes', classRoutes);
+
 
 // Escuchar en un puerto
 const PORT = process.env.PORT || 3000;

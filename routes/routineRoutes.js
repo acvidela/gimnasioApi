@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const memberController = require('../controllers/routineController');
+const routineController = require('../controllers/routineController');
 
 // Crear una nueva rutina
 router.post('/', routineController.createRoutine);

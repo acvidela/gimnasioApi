@@ -1,11 +1,11 @@
-const Member = require('../models/routineModel.js');
+const Routine = require('../models/routineModel.js');
 
 // Crear una nueva rutina
 exports.createRoutine = async (req, res) => {
     try {
-        const newRoutiner = new Routine(req.body);
+        const newRoutine = new Routine(req.body);
         await newRoutine.save();
-        res.status(201).json(newMRoutine);
+        res.status(201).json(newRoutine);
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
